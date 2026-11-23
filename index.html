@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexander Mar Porras · Ingeniero de Sistemas y desarrollador de software</title>
+<meta name="description" content="Portafolio de Alexander Mar Porras, ingeniero de sistemas en Lima, Perú. Desarrollo de software, análisis de requerimientos y optimización de procesos.">
+<meta property="og:title" content="Alexander Mar Porras · Ingeniero de Sistemas">
+<meta property="og:description" content="Desarrollo de software, análisis de requerimientos y optimización de procesos.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1220; --surface:#111B2E; --ink:#E6EDF7; --muted:#9DB0CC; --line:#22304A; --accent:#22D3EE; --accent-ink:#06202A; --warn:#FBBF24;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[data-theme="light"]{--bg:#F4F7FB; --surface:#FFFFFF; --ink:#0F1B33; --muted:#4B5B78; --line:#D5DEEA; --accent:#0369A1; --accent-ink:#FFFFFF; --warn:#92400E; color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(4.5rem + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:4rem}
+.logo{font:800 1.1rem var(--head);text-decoration:none}
+nav{display:flex;align-items:center;gap:1.4rem}
+nav a{text-decoration:none;color:var(--muted);font-size:.97rem}
+nav a:hover{color:var(--ink)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:.45rem;padding:.4rem .8rem;font:inherit;cursor:pointer}
+@media (max-width:42rem){
+  #menu{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}
+  nav.open{display:flex}
+  nav a{padding:.6rem 0;width:100%;font-size:1.05rem}
+}
+
+.hero{padding:clamp(3.5rem,10vw,7.5rem) 0 clamp(3rem,7vw,5rem)}
+.hero h1{font:800 clamp(2.8rem,10.5vw,6.75rem)/.95 var(--head);letter-spacing:-.035em;margin:0 0 1.4rem}
+.role{font:500 clamp(1.15rem,2.6vw,1.5rem)/1.35 var(--head);color:var(--accent);margin:0 0 1.2rem}
+.lead{max-width:40rem;color:var(--muted);margin:0 0 2rem}
+.row{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:.5rem;font-weight:500;text-decoration:none;border:1.5px solid var(--line);color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.social{display:flex;gap:1.5rem;margin-top:1.75rem;color:var(--muted);font-size:.97rem}
+.social a:hover{color:var(--accent)}
+
+section{padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.6rem,4vw,2.25rem)/1.1 var(--head);letter-spacing:-.02em;margin:0 0 2rem}
+h3{font:700 1.15rem/1.3 var(--head);margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1.5rem}
+
+.about{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:2rem 3rem}
+.about p{margin:0 0 1rem;max-width:38rem}
+.edu h3{margin-bottom:.75rem}
+.edu ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.edu li{margin:.25rem 0}
+.edu strong{color:var(--ink);font-weight:500}
+@media (max-width:46rem){.about{grid-template-columns:1fr}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.grid .card p{margin:.5rem 0 0;color:var(--muted)}
+
+.jobs{display:grid;gap:1rem}
+.job .when{color:var(--accent);font-size:.93rem;margin:.15rem 0 .7rem}
+.job ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.job li{margin:.2rem 0}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(18.5rem,1fr));gap:1rem}
+.proj{display:flex;flex-direction:column;gap:.9rem}
+.badge{align-self:flex-start;font-size:.82rem;padding:.12rem .65rem;border-radius:99px;border:1px solid var(--warn);color:var(--warn)}
+.badge.ok{border-color:var(--accent);color:var(--accent)}
+.proj p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding:0;list-style:none}
+.tags li{font-size:.85rem;padding:.12rem .6rem;border-radius:.35rem;border:1px solid var(--line)}
+
+.contact p{max-width:34rem;color:var(--muted);margin:0 0 1.5rem}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);padding:.3rem .8rem;border-radius:.4rem;font:inherit;font-size:.9rem;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#inicio">Alexander Mar</a>
+    <button id="menu" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
+    <nav id="nav" aria-label="Principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap">
+    <div class="hero">
+      <h1>Alexander Mar Porras</h1>
+      <p class="role">Ingeniero de Sistemas y desarrollador de software</p>
+      <p class="lead">Desarrollo soluciones de software, levanto requerimientos y optimizo procesos con C#, JavaScript y SQL, trabajando con metodologías ágiles. Vivo en Lima, Perú.</p>
+      <div class="row">
+        <a class="btn primary" href="#proyectos">Ver proyectos</a>
+        <a class="btn" href="#contacto">Contactar</a>
+        <a class="btn" href="cv-alexander.pdf" download>Descargar CV</a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/alexzMAR" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alexander-wuel-mar-porras/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:alxzmar.15@gmail.com">Correo</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre-mi">
+    <div class="wrap">
+      <h2>Sobre mí</h2>
+      <div class="about">
+        <div>
+          <p>Soy ingeniero de sistemas con experiencia en desarrollo de software, análisis de requerimientos y optimización de procesos. He participado en proyectos tecnológicos con C#, JavaScript y SQL.</p>
+          <p>Trabajo tanto en backend como en frontend, y conozco bases de datos, arquitectura de aplicaciones y control de versiones. Me oriento a resultados, a resolver problemas y a mejorar de forma continua.</p>
+        </div>
+        <div class="card edu">
+          <h3>Formación y certificaciones</h3>
+          <ul>
+            <li><strong>Ingeniería de Sistemas</strong>, Universidad César Vallejo (2018 – 2024)</li>
+            <li>Cisco CCNA v7</li>
+            <li>Inglés intermedio, Centro de Idiomas UCV</li>
+            <li>Ofimática avanzada</li>
+            <li>Seminario en Inteligencia Emocional, UCV</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap">
+      <h2>Habilidades técnicas</h2>
+      <div class="grid">
+        <div class="card"><h3>Lenguajes</h3><p>C#, Java, JavaScript, TypeScript, Python, PHP</p></div>
+        <div class="card"><h3>Frameworks y tecnologías</h3><p>.NET, .NET Core, Angular, React, Flutter, HTML5, CSS3</p></div>
+        <div class="card"><h3>Bases de datos</h3><p>SQL Server, MySQL, PostgreSQL</p></div>
+        <div class="card"><h3>Herramientas</h3><p>Git, GitHub, Azure DevOps, Docker</p></div>
+        <div class="card"><h3>Metodologías</h3><p>Scrum y metodologías ágiles</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <h2>Experiencia laboral</h2>
+      <div class="jobs">
+        <article class="card job">
+          <h3>Auxiliar de Verificación de Liquidaciones, Facturación · Manpower</h3>
+          <p class="when">Septiembre 2025 – actualidad</p>
+          <ul>
+            <li>Gestión y validación de expedientes digitales en plataformas corporativas.</li>
+            <li>Registro de datos operativos y organización de bases de datos internas.</li>
+            <li>Uso de herramientas digitales para el control y la trazabilidad de la información.</li>
+          </ul>
+        </article>
+        <article class="card job">
+          <h3>Practicante preprofesional de Ingeniería de Sistemas · ENGIE 24</h3>
+          <p class="when">Septiembre – diciembre 2024</p>
+          <ul>
+            <li>Levantamiento y documentación de requerimientos funcionales.</li>
+            <li>Participación en soluciones para optimizar procesos, con Scrum en equipos multidisciplinarios.</li>
+            <li>Testing y validación funcional.</li>
+          </ul>
+        </article>
+        <article class="card job">
+          <h3>Practicante preprofesional de Ingeniería de Sistemas · Grupo HackthonyPeru S.A.C.</h3>
+          <p class="when">Abril – julio 2024</p>
+          <ul>
+            <li>Desarrollo de funcionalidades con Java y PHP, y automatización de procesos administrativos.</li>
+            <li>Control de versiones con Git, soporte técnico y documentación.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <h2>Proyectos</h2>
+      <div class="projects">
+        <article class="card proj">
+          <h3>GestiFit</h3>
+          <span class="badge">En desarrollo</span>
+          <p>Aplicación móvil para la gestión de un estilo de vida saludable: alimentación, actividad física y resultados de salud.</p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li></ul>
+        </article>
+        <article class="card proj">
+          <h3>Sistema de Gestión Documentaria para Contratistas</h3>
+          <span class="badge">En desarrollo</span>
+          <p>Solución web para administrar empresas, empleados, usuarios y documentación, con seguimiento de vencimientos.</p>
+          <ul class="tags"><li>Laravel</li><li>MySQL</li></ul>
+        </article>
+        <article class="card proj">
+          <h3>Engie24</h3>
+          <span class="badge ok">Proyecto académico</span>
+          <p>Consumo de una API REST con módulos de usuarios, clientes, servicios, proyectos y documentos.</p>
+          <ul class="tags"><li>Laravel</li><li>PHP</li><li>API REST</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <p>Estoy buscando mi próxima oportunidad como desarrollador. Si tienes una vacante o quieres conversar, escríbeme.</p>
+      <div class="row">
+        <a class="btn primary" href="mailto:alxzmar.15@gmail.com">alxzmar.15@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/alexander-wuel-mar-porras/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/alexzMAR" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="cv-alexander.pdf" download>Descargar CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Alexander Mar Porras · Lima, Perú</span>
+    <button id="theme" type="button">Tema claro</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,theme=document.getElementById('theme'),menu=document.getElementById('menu'),nav=document.getElementById('nav');
+  theme.addEventListener('click',function(){
+    var light=root.getAttribute('data-theme')==='light';
+    if(light){root.removeAttribute('data-theme');theme.textContent='Tema claro';}
+    else{root.setAttribute('data-theme','light');theme.textContent='Tema oscuro';}
+  });
+  menu.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded',open);
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
+</body>
+</html>
